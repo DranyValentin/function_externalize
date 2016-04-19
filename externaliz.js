@@ -1,14 +1,14 @@
 "use strict"
 
-function externalize(){
-	var $links = document.querySelectorAll("a")
+function externalize(document) {
+	var $links = document.querySelectorAll("a, area")
 
 	$links.forEach = [ ].forEach
 
-	$links.forEach(function(el, index, arr){
-		if ( el.href.match(/^(https?:)?\/\/.+$/im) ){
-			el.rel = "external"
-			el.target = "_blank"
+	$links.forEach(function($el) {
+		if ( /^(https?:)?\/\//i.test($el.href) ) {
+			$el.rel = "external"
+			$el.target = "_blank"
 		}
 	})
 }
