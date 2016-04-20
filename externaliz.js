@@ -1,7 +1,7 @@
 "use strict"
 
 function externalize(){
-	var $links = document.querySelectorAll("a")
+	var $links = document.querySelectorAll("a, area")
 
 	$links.forEach = [ ].forEach
 
